@@ -215,15 +215,15 @@
                             <ul class="main__contents--keyword">
                                 <li>
                                     <p>&#x25B6; キーワード1</p>
-                                    <input type="text" class="main__contents--inputarea">
+                                    <input type="text" class="main__contents--inputarea" name="person">
                                 </li>
                                 <li>
                                     <p>&#x25B6; キーワード2</p>
-                                    <input type="text" class="main__contents--inputarea">
+                                    <input type="text" class="main__contents--inputarea" name="place">
                                 </li>
                                 <li>
                                     <p>&#x25B6; キーワード3</p>
-                                    <input type="text" class="main__contents--inputarea">
+                                    <input type="text" class="main__contents--inputarea" name="time">
                                 </li>
                             </ul>
                             <button type="submit" class="main__contents--submit">遅刻理由を作成する</button>
