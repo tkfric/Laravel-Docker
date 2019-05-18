@@ -6,14 +6,23 @@ use App\Api\HotPepperApi;
 
 class GetShop
 {
+    /**
+     * HTTPクライアントのインスタンスを格納
+     */
     private $client;
 
+    /**
+     * HOTPEPPER APIのURL
+     */
     private $url;
-
+    
+    /**
+     * HOTPEPPER APIの認証キー
+     */
     private $key;
 
-    public function __construct() {
-        $this->client = new HotPepperApi;
+    public function __construct(HotPepperApi $client) {
+        $this->client = $client;
         $this->url = env('HOTPEPPER_REQUEST_URI');
         $this->key = env('HOTPEPPER_API_KEY');
     }
@@ -37,10 +46,8 @@ class GetShop
         $this->client->requestGet($this->url, $param);
         $response = $client->getResponseBody();
         $object = simplexml_load_string($response);
-
         return $object;
     }
-
 
     /**
      * ブックマーク登録した店舗一覧を取得する
@@ -61,10 +68,6 @@ class GetShop
         $this->client->requestGet($this->url, $param);
         $response = $this->client->getResponseBody();
         $object = simplexml_load_string($response);
-
         return $object;
     }
-
-
-
 }
