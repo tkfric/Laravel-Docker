@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Bookmark;
-// use App\Service\GetShop;
+use App\Service\GetShop;
 
 class BookmarkController extends Controller
 {
@@ -12,10 +12,10 @@ class BookmarkController extends Controller
     protected $bookmark;
     protected $hotPepper;
 
-    public function __construct(Bookmark $bookmark)
+    public function __construct(Bookmark $bookmark, GetShop $getShop)
     {
         $this->bookmark = $bookmark;
-//         $this->hotPepper = $hotPeppar;
+        $this->getShop = $getShop;
     }
 
     /**
@@ -32,12 +32,8 @@ class BookmarkController extends Controller
         }
         /* serIdを元にブックマーク店舗ID一覧を取得する */
         $shopIdList = $this->bookmark->getShopIdListByUserId($userId);
+        $shopDataList = $this->getShop($shopIdList);
 
-        dump($shopIdList);
-        /* TODO:店舗IDListを元に店舗情報を取得する */
-        $shopDataList = [];
-
-        /* TODO:front要望によてはコンバート処理 */
         return json_encode($shopDataList);
     }
 
