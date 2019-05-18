@@ -13,7 +13,8 @@ class Bookmark extends Model
     /**
      * ユーザのブックマークリストを返す
      * @param int $userId
-     * @return array $shopIdList */
+     * @return array $shopIdList
+     * */
     public function getShopIdListByUserId($userId)
     {
         $shopIdList = $this->select('shop_id')->where('user_id', $userId)->get()->toArray();
@@ -29,13 +30,14 @@ class Bookmark extends Model
      * ブックマーク登録
      * @param int $userId
      * @param int $shopId
-     * @return boolean*/
+     * @return boolean
+     * */
     public function setBookMark($userId, $shopId)
     {
         $isRecord = false;
         $recordCount = $this->where('user_id', $userId)->where('shop_id', $shopId)->count();
 
-        if($recordCount > 0) {
+        if ($recordCount > 0) {
             return true;
         }
         $this->insert(['user_id' => $userId,'shop_id' => $shopId,]);
@@ -48,14 +50,15 @@ class Bookmark extends Model
      * ブックマーク解除
      * @param int $userId
      * @param int $shopId
-     * @return string|boolean*/
+     * @return string|boolean
+     * */
     public function dropBookMark($userId, $shopId)
     {
         $isRecord = false;
         $recordCount = $this->where('user_id', $userId)->where('shop_id', $shopId)->count();
 
-        if($recordCount <= 0) {
-            return falase;
+        if ($recordCount <= 0) {
+            return false;
         }
 
         $this->where('user_id', $userId)->where('shop_id', $shopId)->delete();

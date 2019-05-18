@@ -21,13 +21,13 @@ class BookmarkController extends Controller
     /**
      * ブックマーク一覧
      * @param Request $request
-     * @return boolean|unknown*/
+     * @return boolean|unknown
+     * */
     public function getBookMarkList(Request $request)
     {
-        var_dump('getBookMarkList');
         /* userIdの存在確認 */
         $userId = $request->input('user_id');
-        if(empty($userId)) {
+        if (empty($userId)) {
             return false;
         }
         /* serIdを元にブックマーク店舗ID一覧を取得する */
@@ -40,8 +40,8 @@ class BookmarkController extends Controller
     /**
      * ブックマークの登録
      * @param Request $request
-     * @return string[]|boolean[]|array[]*/
-
+     * @return string[]|boolean[]|array[]
+     * */
     public function setBookMark(Request $request)
     {
         $userId = $request->input('user_id');
@@ -54,7 +54,7 @@ class BookmarkController extends Controller
             'result' => false
         ];
 
-        if(empty($userId) || empty($shopId)) {
+        if (empty($userId) || empty($shopId)) {
             $returnArray['message'] = 'No Required';
             return $returnArray;
         }
@@ -62,10 +62,9 @@ class BookmarkController extends Controller
         try {
             $returnArray['result'] = $this->bookmark->setBookMark($userId, $shopId);
             $returnArray['message'] = 'completed';
-        }
-        catch (Exception $e) {
+        } catch (\Exception $e) {
             $returnArray['result'] = false;
-            $returnArray['message'] = $e->__toString();
+            $returnArray['message'] = $e->getMessage();
         }
 
         return json_encode($returnArray);
@@ -74,8 +73,8 @@ class BookmarkController extends Controller
     /**
      * ブックマークの削除
      * @param Request $request
-     * @return string[]|boolean[]|array[]*/
-
+     * @return string[]|boolean[]|array[]
+     * */
     public function dropBookMark(Request $request)
     {
         $userId = $request->input('user_id');
@@ -88,7 +87,7 @@ class BookmarkController extends Controller
             'result' => false
         ];
 
-        if(empty($userId) || empty($shopId)) {
+        if (empty($userId) || empty($shopId)) {
             $returnArray['message'] = 'No Required';
             return $returnArray;
         }
@@ -96,19 +95,14 @@ class BookmarkController extends Controller
         try {
             $returnArray['result'] = $this->bookmark->dropBookMark($userId, $shopId);
 
-            if($returnArray['result']) {
-                $returnArray['message'] = 'completed';
-            }
-            else {
-                $returnArray['message'] = 'Unknown user_id or shop_id';
-            }
+            $returnArray['message'] = ($returnArray['result']) ?
+                                        'completed' :
+                                        'Unknown user_id or shop_id';
 
-        }
-        catch (Exception $e) {
+        } catch (\Exception $e) {
             $returnArray['result'] = false;
-            $returnArray['message'] = $e->__toString();
+            $returnArray['message'] = $e->getMessage();
         }
-
 
         return json_encode($returnArray);
     }
