@@ -15,9 +15,9 @@ class GenerateService
     }
     /**
      * @param array $request
-     * @return string
+     * @return array
      */
-    public function execute(array $request): string
+    public function execute(array $request): array
     {
         // リクエストからそれぞれのvalue取得　
         $time = $request['time'];
@@ -26,13 +26,14 @@ class GenerateService
         // jsonデータ取得
         $jsonData = $this->model->getAll();
 
-        $string =
-            'おはようございます。ミサワです。' . PHP_EOL .
-            $place . 'で' . $jsonData['do'] . '、' . PHP_EOL .
-            $person . 'が' . PHP_EOL .
-            $jsonData['reason'] . 'ため' . '、' .
-            '本日は' . $time . '遅れます。';
+        $array = [
+            '0' => "おはようございます。ミサワです。",
+            '1' => $place . "で" . $jsonData['do'] . "、",
+            '2' => $person . "が",
+            '3' => $jsonData['reason'] . "ため、",
+            '4' => "本日は" . $time . "遅れます。",
+        ];
 
-        return $string;
+        return $array;
     }
 }

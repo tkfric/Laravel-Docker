@@ -222,11 +222,11 @@
                 <div class="inner clearfix">
                     <div class="main__contents">
                         <p class="main__contents--description">よう、兄弟。遅刻理由が作成できたぜ。<br>ナイスでパーフェクトな理由だろ？</p>
-                        <div class="main__contents--reasonarea">
-                            @foreach ($generatedData as $value)
-                                <p>{{ $value }}</p>
-                            @endforeach
-                        </div>
+                        <p class="main__contents--reasonarea">
+                        @foreach ($generatedData as $k => $v)
+                            {{ $v }} <br>
+                        @endforeach
+                        </p>
                         <div class="main__contents--btn">
                             <button type="" class="main__contents--copy">理由をコピーする</button>
                         </div>
