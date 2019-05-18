@@ -9,15 +9,14 @@ use App\Http\Requests;
 
 class IndexController extends Controller
 {
-  protected $generate;
-
-      public function __cunstruct( GenerateService $generate )
+    protected $generate;
+    public function __cunstruct(GenerateService $generate)
     {
-        $this->generate->$generate;
+        $this->generate = $generate;
     }
 
-  public function show()
-  {
-    return view('top');
-  }
+    public function show()
+    {
+        return view('top');
+    }
 }
