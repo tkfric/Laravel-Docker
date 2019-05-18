@@ -25,8 +25,6 @@ class GetShop
      * @return object 店舗情報
      */
     public function searchDistance(int $lat, int $lng){
-        // リクエストURIとAPIのキーを環境変数から取得
-
         // クエリパラメータにするために連想配列化
         $param = [
             'body' => [
@@ -48,12 +46,15 @@ class GetShop
      * ブックマーク登録した店舗一覧を取得する
      * @param array $shopList ブックマーク店舗一覧
      */
-    public function getBookmarks(string $shopid) {
+    public function getBookmarks(array $shopid) {
+        // 配列として取得した店舗IDを,で結合 
+        $shopIdList = implode(',',$shopid);
 
+        // クエリパラメータにするために連想配列化
         $param = [
             'body' => [
                 'key' => $this->key,
-                'id'  => $shopid
+                'id'  => $shopIdList
             ]
         ];
 
