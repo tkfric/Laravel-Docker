@@ -3,8 +3,16 @@ declare(strict_types=1);
 
 namespace App\Services;
 
+use App\Models\JsonModel;
+
 class GenerateService
 {
+    protected $model;
+
+    public function __construct(JsonModel $model)
+    {
+        $this->model = $model;
+    }
     /**
      * @param array $request
      * @return string
@@ -16,7 +24,7 @@ class GenerateService
         $getRequestPlace = $request['place'];
         $getRequestPerson = $request['person'];
         // jsonデータ取得
-        $jsonData = $this->getAll();
+        $jsonData = $this->model->getAll();
 
         // jsonデータからそれぞれのvalue取得
         $getPlaceSentence = $jsonData['reason'],
