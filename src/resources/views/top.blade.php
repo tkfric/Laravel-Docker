@@ -237,6 +237,7 @@
                     <div class="main__contents">
                         <p class="main__contents--description">よう、兄弟。遅刻しちまったか。まあ慌てるな。<br>キーワードを打ち込んでくれりゃあ俺が理由を作成するぜ。</p>
                         <form action="/misawa/generate" method="post">
+                            {{ csrf_field() }}
                             <ul class="main__contents--keyword">
                                 <li>
                                     <p>&#x25B6; 人物</p>
@@ -252,7 +253,7 @@
                                 </li>
                             </ul>
                             <div class="main__contents--btn">
-                                <button type="" class="main__contents--submit">遅刻理由を作成する</button>
+                                <button type="submit" class="main__contents--submit">遅刻理由を作成する</button>
                             </div>
                         </form>
                     </div>
