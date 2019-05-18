@@ -19,15 +19,11 @@ class GeneratorController extends Controller
     {
         $validatedKeywords = $request->validate([
             'person' => 'required|max:30',
-            'plase' => 'required|max:30',
+            'place' => 'required|max:30',
             'time' => 'required|max:30',
         ]);
-
-        $ganeratedData = $this->servoce->execute($request->all());
+        $generatedData = $this->service->execute($request->all());
 
         return view('complete', $generatedData);
-
     }
-
-
 }
