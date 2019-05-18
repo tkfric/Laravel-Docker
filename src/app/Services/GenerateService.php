@@ -1,8 +1,10 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Services;
 
-class JsonDataService
+class GenerateService
 {
   protected $json;
   private $data;
