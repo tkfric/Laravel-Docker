@@ -14,3 +14,7 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/getBookMarkList', 'BookMarkController@getBookMarkList');
+Route::get('/setBookMark', 'BookMarkController@setBookMark');
+Route::get('/dropBookMark', 'BookMarkController@dropBookMark');
