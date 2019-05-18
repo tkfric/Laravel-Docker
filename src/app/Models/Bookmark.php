@@ -10,13 +10,26 @@ class Bookmark extends Model
     //
     protected $table = 'bookmarks';
 
+    /**
+     * ユーザのブックマークリストを返す
+     * @param int $userId
+     * @return array $shopIdList */
     public function getShopIdListByUserId($userId)
     {
         $shopIdList = $this->select('shop_id')->where('user_id', $userId)->get()->toArray();
-        return $shopIdList;
+        $shopIdArray = [];
+        foreach($shopIdList as $key => $value) {
+            $shopIdArray[] = $value['shop_id'];
+        }
+        return $shopIdArray;
     }
 
 
+    /**
+     * ブックマーク登録
+     * @param int $userId
+     * @param int $shopId
+     * @return boolean*/
     public function setBookMark($userId, $shopId)
     {
         $isRecord = false;
@@ -31,6 +44,11 @@ class Bookmark extends Model
         return $isRecord;
     }
 
+    /**
+     * ブックマーク解除
+     * @param int $userId
+     * @param int $shopId
+     * @return string|boolean*/
     public function dropBookMark($userId, $shopId)
     {
         $isRecord = false;

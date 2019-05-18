@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Bookmark;
-// use App\Service\hotPepperService;
+// use App\Service\GetShop;
 
 class BookmarkController extends Controller
 {
@@ -32,7 +32,8 @@ class BookmarkController extends Controller
         }
         /* serIdを元にブックマーク店舗ID一覧を取得する */
         $shopIdList = $this->bookmark->getShopIdListByUserId($userId);
-//         dump($shopIdList);
+
+        dump($shopIdList);
         /* TODO:店舗IDListを元に店舗情報を取得する */
         $shopDataList = [];
 
