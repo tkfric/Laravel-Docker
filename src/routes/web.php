@@ -14,3 +14,7 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+    Route::get('/misawa', 'IndexController@show');
+    Route::post('/misawa/generate','GeneratorController@execute');
+
