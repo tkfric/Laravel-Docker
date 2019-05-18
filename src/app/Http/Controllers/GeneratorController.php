@@ -23,6 +23,8 @@ class GeneratorController extends Controller
             'time' => 'required|max:30',
         ]);
 
-        return view('complete', $this->service->execute($request->all()));
+        return view('complete', [
+            'generatedData' => $this->service->execute($request->all())
+        ]);
     }
 }
