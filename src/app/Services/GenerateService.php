@@ -20,23 +20,19 @@ class GenerateService
     public function execute(array $request): string
     {
         // リクエストからそれぞれのvalue取得　
-        $getRequestTime = $request['time'];
-        $getRequestPlace = $request['place'];
-        $getRequestPerson = $request['person'];
+        $time = $request['time'];
+        $place = $request['place'];
+        $person = $request['person'];
         // jsonデータ取得
         $jsonData = $this->model->getAll();
 
-        // jsonデータからそれぞれのvalue取得
-        $getPlaceSentence = $jsonData['reason'],
-        $getDoSentence = $jsonData['do'];
+        $string =
+            'おはようございます。ミサワです。' . PHP_EOL .
+            $place . 'で' . $jsonData['do'] . '、' . PHP_EOL .
+            $person . 'が' . PHP_EOL .
+            $jsonData['reason'] . 'ため' . '、' .
+            '本日は' . $time . '遅れます。';
 
-        $joinRequestAndData =
-            'おはようございます。ミサワです。' . PHP_EOL
-            {{ $getRequestPlace }} . 'で' . {{ $getDoSentence }} . '、' . PHP_EOL
-            {{ $getRequestPerson }} . 'が' . PHP_EOL .
-            {{ $getPlaceSentence }} . 'ため' . '、' .
-            '本日は'{{ $getRequestTime }} . '遅れます。';
-
-        return $joinRequestAndData;
+        return $string;
     }
 }

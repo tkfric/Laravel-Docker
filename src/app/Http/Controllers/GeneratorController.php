@@ -10,20 +10,19 @@ class GeneratorController extends Controller
 {
     protected $service;
 
-    public function __construct(GenerateServise $service)
+    public function __construct(GenerateService $service)
     {
         $this->service = $service;
-    } 
+    }
 
     public function execute(Request $request)
     {
-        $validatedKeywords = $request->validate([
+        $this->validate($request,[
             'person' => 'required|max:30',
             'place' => 'required|max:30',
             'time' => 'required|max:30',
         ]);
-        $generatedData = $this->service->execute($request->all());
 
-        return view('complete', $generatedData);
+        return view('complete', $this->service->execute($request->all()));
     }
 }
