@@ -15,7 +15,7 @@ class GetShop
      * HOTPEPPER APIのURL
      */
     private $url;
-    
+
     /**
      * HOTPEPPER APIの認証キー
      */
@@ -54,7 +54,7 @@ class GetShop
      * @param array $shopList ブックマーク店舗一覧
      */
     public function getBookmarks(array $shopid) {
-        // 配列として取得した店舗IDを,で結合 
+        // 配列として取得した店舗IDを,で結合
         $shopIdList = implode(',',$shopid);
 
         // クエリパラメータにするために連想配列化

@@ -19,7 +19,7 @@ class Bookmark extends Model
     {
         $shopIdList = $this->select('shop_id')->where('user_id', $userId)->get()->toArray();
         $shopIdArray = [];
-        foreach($shopIdList as $key => $value) {
+        foreach($shopIdList as $value) {
             $shopIdArray[] = $value['shop_id'];
         }
         return $shopIdArray;

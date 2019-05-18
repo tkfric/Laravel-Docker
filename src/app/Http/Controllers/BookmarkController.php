@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Bookmark;
-use App\Service\GetShop;
+use App\Services\GetShop;
 
 class BookmarkController extends Controller
 {
@@ -27,12 +27,20 @@ class BookmarkController extends Controller
     {
         /* userIdの存在確認 */
         $userId = $request->input('user_id');
+        $shopDataList = [
+            'result' => false,
+            'message' => 'Unknown user_id'
+
+        ];
         if (empty($userId)) {
-            return false;
+            return json_encode($shopDataList);
         }
+
         /* serIdを元にブックマーク店舗ID一覧を取得する */
         $shopIdList = $this->bookmark->getShopIdListByUserId($userId);
-        $shopDataList = $this->getShop($shopIdList);
+        $shopDataList[] = $this->getShop->getBookmarks($shopIdList);
+        $shopDataList['result'] = true;
+        $shopDataList['message'] = 'OK';
 
         return json_encode($shopDataList);
     }
