@@ -151,25 +151,11 @@
                 line-height: 25px;
                 margin-bottom: 40px;
             }
-            
-            .main__contents--keyword p {
-                margin-bottom: 5px;
-            }
 
-            .main__contents--keyword li {
-                margin-bottom: 15px;
-            }
-
-            
-            .main__contents--keyword li:last-child {
-                margin-bottom: 0;
-            }
-
-            .main__contents--inputarea {
+            .main__contents--reasonarea {
+                border: 1px solid #000;
                 box-sizing: border-box;
-                font-size: 18px;
-                height: 25px;
-                outline: none;
+                height: 200px;
                 padding: 5px;
                 width: 400px;
             }
@@ -179,7 +165,7 @@
                 padding-left: 100px; 
             }
 
-            .main__contents--submit {
+            .main__contents--copy {
                 background-color: #696969;
                 border-radius: 25px;
                 color: #fff;
@@ -235,26 +221,11 @@
             <main class="main">
                 <div class="inner clearfix">
                     <div class="main__contents">
-                        <p class="main__contents--description">よう、兄弟。遅刻しちまったか。まあ慌てるな。<br>キーワードを打ち込んでくれりゃあ俺が理由を作成するぜ。</p>
-                        <form action="/misawa/generate" method="post">
-                            <ul class="main__contents--keyword">
-                                <li>
-                                    <p>&#x25B6; 人物</p>
-                                    <input type="text" class="main__contents--inputarea" name="person" placeholder="おかん">
-                                </li>
-                                <li>
-                                    <p>&#x25B6; 場所</p>
-                                    <input type="text" class="main__contents--inputarea" name="place" placeholder="本能寺">
-                                </li>
-                                <li>
-                                    <p>&#x25B6; 遅刻時間</p>
-                                    <input type="text" class="main__contents--inputarea" name="time" placeholder="2時間">
-                                </li>
-                            </ul>
-                            <div class="main__contents--btn">
-                                <button type="" class="main__contents--submit">遅刻理由を作成する</button>
-                            </div>
-                        </form>
+                        <p class="main__contents--description">よう、兄弟。遅刻理由が作成できたぜ。<br>ナイスでパーフェクトな理由だろ？</p>
+                        <p class="main__contents--reasonarea">{{ $generatedData }}</p>
+                        <div class="main__contents--btn">
+                            <button type="" class="main__contents--copy">理由をコピーする</button>
+                        </div>
                     </div>
                     <div class="main__img">
                         <img src="{{ asset('/image/misawa.jpeg') }}" alt="">
