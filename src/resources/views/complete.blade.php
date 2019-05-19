@@ -59,13 +59,16 @@
             }
 
 
-
             /*---------------
                 common 
             ---------------*/
             html {
                 min-height: 100%;
                 position: relative;
+            }
+
+            body {
+                font-family: serif;
             }
 
             .clearfix::after {
@@ -87,6 +90,7 @@
                 background-color: #000;
                 box-sizing: border-box;
                 font-size: 0;
+                font-weight: 900;
                 padding: 10px 0;
                 width: 100%;
             }
@@ -144,6 +148,10 @@
             /*---------------
                 main
             ---------------*/
+            .main {
+                font-weight: 600;
+            }
+
             .main__contents {
                 float: left;
                 font-size: 18px;
@@ -177,6 +185,10 @@
                 outline: none;
                 padding: 10px 0;
                 width: 200px;
+            }
+
+            .main__contents--copy:active {
+                opacity: .7;
             }
 
             .main__img {

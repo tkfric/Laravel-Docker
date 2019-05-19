@@ -59,13 +59,16 @@
             }
 
 
-
             /*---------------
                 common 
             ---------------*/
             html {
                 min-height: 100%;
                 position: relative;
+            }
+
+            body {
+                font-family: serif;
             }
 
             .clearfix::after {
@@ -87,6 +90,7 @@
                 background-color: #000;
                 box-sizing: border-box;
                 font-size: 0;
+                font-weight: 900;
                 padding: 10px 0;
                 width: 100%;
             }
@@ -144,6 +148,10 @@
             /*---------------
                 main
             ---------------*/
+            .main {
+                font-weight: 600;
+            }
+
             .main__contents {
                 float: left;
                 font-size: 18px;
@@ -151,7 +159,6 @@
                 width: 700px;
             }
 
-            
             .main__contents--description {
                 line-height: 25px;
                 margin-bottom: 40px;
@@ -165,7 +172,6 @@
                 margin-bottom: 15px;
             }
 
-            
             .main__contents--keyword li:last-child {
                 margin-bottom: 0;
             }
@@ -193,6 +199,10 @@
                 width: 200px;
             }
 
+            .main__contents--submit:active {
+                opacity: .7;
+            }
+
             .main__img {
                 float: right;
                 width: 400px;
@@ -208,7 +218,6 @@
                 position: absolute;
                 width: 100%;
             }
-
 
             .footer__text {
                 color: #fff;
@@ -247,16 +256,21 @@
                             {{ csrf_field() }}
                             <ul class="main__contents--keyword">
                                 <li>
+                                    <p>&#x25B6; 名前</p>
+                                    <input type="text" class="main__contents--inputarea" name="name" placeholder="ex) ミサワ">
+                                </li>
+                            <ul class="main__contents--keyword">
+                                <li>
                                     <p>&#x25B6; 人物</p>
-                                    <input type="text" class="main__contents--inputarea" name="person" placeholder="おかん">
+                                    <input type="text" class="main__contents--inputarea" name="person" placeholder="ex) おかん">
                                 </li>
                                 <li>
                                     <p>&#x25B6; 場所</p>
-                                    <input type="text" class="main__contents--inputarea" name="place" placeholder="本能寺">
+                                    <input type="text" class="main__contents--inputarea" name="place" placeholder="ex) 本能寺">
                                 </li>
                                 <li>
                                     <p>&#x25B6; 遅刻時間</p>
-                                    <input type="text" class="main__contents--inputarea" name="time" placeholder="2時間">
+                                    <input type="text" class="main__contents--inputarea" name="time" placeholder="ex) 2時間">
                                 </li>
                             </ul>
                             <div class="main__contents--btn">
