@@ -63,6 +63,11 @@
             /*---------------
                 common 
             ---------------*/
+            html {
+                min-height: 100%;
+                position: relative;
+            }
+
             .clearfix::after {
                 content: '';
                 clear: both;
@@ -198,7 +203,9 @@
             ---------------*/
             .footer {
                 background-color: #696969;
+                bottom: 0;
                 padding: 20px 0;
+                position: absolute;
                 width: 100%;
             }
 
