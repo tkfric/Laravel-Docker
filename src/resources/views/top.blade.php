@@ -82,6 +82,11 @@
                 width: 1100px;
             }
 
+            .error {
+                color: #f00;
+                font-size: 14px;
+            }
+
 
             /*---------------
                 header 
@@ -257,19 +262,55 @@
                             <ul class="main__contents--keyword">
                                 <li>
                                     <p>&#x25B6; 名前</p>
+                                    @if ($errors->get('name'))
+                                        <div class="error">
+                                            <ul>
+                                                @foreach ($errors->get('name') as $error)
+                                                    <li>※{{ $error }}</li>
+                                                @endforeach
+                                            </ul>
+                                        </div>
+                                    @endif
                                     <input type="text" class="main__contents--inputarea" name="name" placeholder="ex) ミサワ">
                                 </li>
                             <ul class="main__contents--keyword">
                                 <li>
                                     <p>&#x25B6; 人物</p>
+                                    @if ($errors->get('person'))
+                                        <div class="error">
+                                            <ul>
+                                                @foreach ($errors->get('person') as $error)
+                                                    <li>※{{ $error }}</li>
+                                                @endforeach
+                                            </ul>
+                                        </div>
+                                    @endif
                                     <input type="text" class="main__contents--inputarea" name="person" placeholder="ex) おかん">
                                 </li>
                                 <li>
                                     <p>&#x25B6; 場所</p>
+                                    @if ($errors->get('place'))
+                                        <div class="error">
+                                            <ul>
+                                                @foreach ($errors->get('place') as $error)
+                                                    <li>※{{ $error }}</li>
+                                                @endforeach
+                                            </ul>
+                                        </div>
+                                    @endif
                                     <input type="text" class="main__contents--inputarea" name="place" placeholder="ex) 本能寺">
                                 </li>
                                 <li>
                                     <p>&#x25B6; 遅刻時間</p>
+                                    @if ($errors->get('time'))
+                                        <div class="error">
+                                            <ul>
+                                                @foreach ($errors->get('time') as $error)
+                                                    <li>※{{ $error }}</li>
+                                                @endforeach
+                                            </ul>
+                                        </div>
+                                    @endif
                                     <input type="text" class="main__contents--inputarea" name="time" placeholder="ex) 2時間">
                                 </li>
                             </ul>
