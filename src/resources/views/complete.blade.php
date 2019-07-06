@@ -8,8 +8,8 @@
         <title>遅刻理由ジェネレーター</title>
 
         <!-- Reset -->
-        <link href="{{ asset('css/reset.css') }}" rel="stylesheet" type="text/css">
-        <link href="{{ asset('css/top.css') }}" rel="stylesheet" type="text/css">
+        <link href="{{ asset('/css/reset.css') }}" rel="stylesheet" type="text/css">
+        <link href="{{ asset('/css/top.css') }}" rel="stylesheet" type="text/css">
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
         <!-- Styles -->
@@ -23,8 +23,8 @@
             dl, dt, dd, ol, ul, li,
             fieldset, form, label, legend,
             table, caption, tbody, tfoot, thead, tr, th, td,
-            article, aside, canvas, details, embed, 
-            figure, figcaption, footer, header, hgroup, 
+            article, aside, canvas, details, embed,
+            figure, figcaption, footer, header, hgroup,
             menu, nav, output, ruby, section, summary,
             time, mark, audio, video {
                 margin: 0;
@@ -35,7 +35,7 @@
                 vertical-align: baseline;
             }
             /* HTML5 display-role reset for older browsers */
-            article, aside, details, figcaption, figure, 
+            article, aside, details, figcaption, figure,
             footer, header, hgroup, menu, nav, section {
                 display: block;
             }
@@ -60,7 +60,7 @@
 
 
             /*---------------
-                common 
+                common
             ---------------*/
             html {
                 min-height: 100%;
@@ -84,7 +84,7 @@
 
 
             /*---------------
-                header 
+                header
             ---------------*/
             .header {
                 background-color: #000;
@@ -97,7 +97,7 @@
 
             .header__title {
                 background-color: #fff;
-                display: inline-block;
+                /* display: inline-block; */
                 float: left;
                 font-size: 110px;
                 height: 100px;
@@ -128,14 +128,14 @@
                 height: 55px;
                 line-height: 55px;
                 text-align: center;
-                width: 100%;                
+                width: 100%;
             }
 
             .header__catch {
                 border: 1px solid #fff;
                 box-sizing: border-box;
                 color: #fff;
-                display: inline-block;
+                /* display: inline-block; */
                 float: left;
                 font-size: 35px;
                 height: 110px;
@@ -159,7 +159,6 @@
                 width: 700px;
             }
 
-            
             .main__contents--description {
                 line-height: 25px;
                 margin-bottom: 40px;
@@ -175,7 +174,7 @@
 
             .main__contents--btn {
                 margin-top: 30px;
-                padding-left: 100px; 
+                padding-left: 100px;
             }
 
             .main__contents--copy {
