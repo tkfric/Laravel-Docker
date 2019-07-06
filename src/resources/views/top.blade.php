@@ -34,7 +34,7 @@
                             {{ csrf_field() }}
                             <ul class="main__contents--keyword">
                                 <li>
-                                    <p>&#x25B6; 名前</p>
+                                    <p>&#x25B6; 自分の名前</p>
                                     @if ($errors->get('name'))
                                         <div class="error">
                                             <ul>
@@ -48,7 +48,7 @@
                                 </li>
                             <ul class="main__contents--keyword">
                                 <li>
-                                    <p>&#x25B6; 人物</p>
+                                    <p>&#x25B6; 思いつく人物</p>
                                     @if ($errors->get('person'))
                                         <div class="error">
                                             <ul>
