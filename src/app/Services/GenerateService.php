@@ -23,11 +23,12 @@ class GenerateService
         $time = $request['time'];
         $place = $request['place'];
         $person = $request['person'];
+        $name = $request['name'];
         // jsonデータ取得
         $jsonData = $this->model->getAll();
 
         $array = [
-            '0' => "おはようございます。ミサワです。",
+            '0' => "おはようございます。" . $name . "です。",
             '1' => $place . "で" . $jsonData['do'] . "、",
             '2' => $person . "が",
             '3' => $jsonData['reason'] . "ため、",

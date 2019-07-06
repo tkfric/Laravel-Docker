@@ -18,6 +18,7 @@ class GeneratorController extends Controller
     public function execute(Request $request)
     {
         $this->validate($request,[
+            'name' => 'required|max:30',
             'person' => 'required|max:30',
             'place' => 'required|max:30',
             'time' => 'required|max:30',
