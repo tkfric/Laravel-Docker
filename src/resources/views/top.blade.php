@@ -87,8 +87,8 @@
                                     <input type="text" class="main__contents--inputarea" name="time" placeholder="ex) 2時間">
                                 </li>
                             </ul>
-                            <div class="main__contents--btn">
-                                <button type="submit" class="main__contents--submit">遅刻理由を作成する</button>
+                            <div class="main__contents--btnArea">
+                                <button type="submit" class="main__contents--btn">遅刻理由を作成する</button>
                             </div>
                         </form>
                     </div>

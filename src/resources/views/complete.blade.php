@@ -35,8 +35,8 @@
                             {{ $v }} <br>
                         @endforeach
                         </p>
-                        <div class="main__contents--btn">
-                            <button type="" class="main__contents--copy">理由をコピーする</button>
+                        <div class="main__contents--btnArea">
+                            <button type="" class="main__contents--btn">理由をコピーする</button>
                         </div>
                     </div>
                     <div class="main__img">

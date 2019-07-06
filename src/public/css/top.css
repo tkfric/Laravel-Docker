@@ -104,11 +104,11 @@ body {
 .main__contents {
 	float: left;
 	font-size: 18px;
+	line-height: 25px;
 	width: 700px;
 }
 
 .main__contents--description {
-	line-height: 25px;
 	margin-bottom: 40px;
 }
 
@@ -133,12 +133,12 @@ body {
 	width: 400px;
 }
 
-.main__contents--btn {
+.main__contents--btnArea {
 	margin-top: 30px;
 	padding-left: 100px;
 }
 
-.main__contents--submit {
+.main__contents--btn {
 	background-color: #696969;
 	border-radius: 25px;
 	color: #fff;
@@ -147,7 +147,7 @@ body {
 	width: 200px;
 }
 
-.main__contents--submit:active {
+.main__contents--btn:active {
 	opacity: .7;
 }
 
